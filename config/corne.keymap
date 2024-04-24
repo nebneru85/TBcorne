@@ -1,8 +1,22 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
 
-#define BASE QWERTY
+// Short versions
+#define RGBON   &rgb_ug RGB_ON
+#define RGBOFF  &rgb_ug RGB_OFF
+#define RGBTOG  &rgb_ug RGB_TOG
+#define RGBHUI  &rgb_ug RGB_HUI
+#define RGBHUD  &rgb_ug RGB_HUD
+#define RGBSAI  &rgb_ug RGB_SAI
+#define RGBSAD  &rgb_ug RGB_SAD
+#define RGBBRI  &rgb_ug RGB_BRI
+#define RGBBRD  &rgb_ug RGB_BRD
+#define RGBEFF  &rgb_ug RGB_EFF
+
+#define BASE 0
 #define LOWER 1
 #define RAISE 2
 #define SHORT 3
@@ -56,10 +70,10 @@
     Short_layer {
     label = " SHORT";
       bindings = <
-        &none         &none &none &none &none        &none            &none     &kp KP_MULTIPLY &kp KP_PLUS      &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 
-        &none         &none &none &none &none        &none            &none     &kp KP_DIVIDE   &kp KP_MINUS     &kp KP_NUMBER_4 &kp KP_NUMBER_5 &kp KP_NUMBER_6 
-        &hm LCTRL F4  &none &none &none &hm LCTRL C  &hm LCTRL V      &none     &kp KP_DOT      &kp KP_NUMBER_0  &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 
-                                  &none &none        &none            &none     &none           &none 
+        &none         &rgb_ug RGB_TOG &rgb_ug RGB_BRI  &rgb_ug RGB_SAI &rgb_ug RGB_SPI  &none          &none     &kp KP_MULTIPLY &kp KP_PLUS      &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 
+        &none         &rgb_ug RGB_EFF &rgb_ug RGB_BRD  &rgb_ug RGB_SAD &rgb_ug RGB_SPD  &none          &none     &kp KP_DIVIDE   &kp KP_MINUS     &kp KP_NUMBER_4 &kp KP_NUMBER_5 &kp KP_NUMBER_6 
+        &hm LCTRL F4  &none           &none            &none           &hm LCTRL C      &hm LCTRL V    &none     &kp KP_DOT      &kp KP_NUMBER_0  &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 
+                                                                       &none            &none          &none     &none           &none            &none 
       >;
     };
 
