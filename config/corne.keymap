@@ -10,6 +10,11 @@
 #define SHORT 3
 #define F24 4
 
+&led_strip {
+    chain-length = <21>;
+};
+
+
 / {
   behaviors {
     hm: homerow_mods {
