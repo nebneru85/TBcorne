@@ -40,8 +40,8 @@
             bindings = <
 &kp TAB           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8    &kp NUMBER_9     &kp NUMBER_0  &kp BACKSPACE
 &kp LEFT_SHIFT    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_SEL 5    &trans        &trans          &kp UP_ARROW    &trans           &kp HOME      &kp PG_UP
-&kp LEFT_CONTROL  &trans        &trans        &trans        &bt BT_CLR    &bt BT_NXT      &trans        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END       &kp PG_DN
-                                              &mo F24       &mo SHORT     &trans          &trans        &trans          &trans
+&kp LEFT_CONTROL  &trans        &trans        &trans        &bt BT_CLR    &bt BT_NXT      &kp ENTER     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END       &kp PG_DN
+                                              &mo F24       &mo SHORT     &trans          &kp ENTER     &trans          &trans
             >;
         };
 
