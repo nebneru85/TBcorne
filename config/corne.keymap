@@ -30,94 +30,6 @@
 #define RGBEFF  &rgb_ug RGB_EFF
 
 
-// Joystiks
-
-/ {
-    behaviors {
-        // Comportamientos para el joystick izquierdo (teclas)
-        joystick_left_left: joystick_left_left {
-            compatible = "zmk,behavior-key-press";
-            label = "JOYSTICK_LEFT_LEFT";
-            #binding-cells = <1>;
-            bindings = <&kp A>; // Tecla A (izquierda)
-        };
-        joystick_left_right: joystick_left_right {
-            compatible = "zmk,behavior-key-press";
-            label = "JOYSTICK_LEFT_RIGHT";
-            #binding-cells = <1>;
-            bindings = <&kp D>; // Tecla D (derecha)
-        };
-        joystick_left_up: joystick_left_up {
-            compatible = "zmk,behavior-key-press";
-            label = "JOYSTICK_LEFT_UP";
-            #binding-cells = <1>;
-            bindings = <&kp W>; // Tecla W (arriba)
-        };
-        joystick_left_down: joystick_left_down {
-            compatible = "zmk,behavior-key-press";
-            label = "JOYSTICK_LEFT_DOWN";
-            #binding-cells = <1>;
-            bindings = <&kp S>; // Tecla S (abajo)
-        };
-
-        // Comportamiento para el joystick derecho (movimiento gradual del mouse)
-        joystick_right_gradual: joystick_right_gradual {
-            compatible = "zmk,behavior-mouse-move";
-            label = "JOYSTICK_RIGHT_GRADUAL";
-            #binding-cells = <0>;
-            move-x = <0>; // Se actualizará dinámicamente
-            move-y = <0>; // Se actualizará dinámicamente
-        };
-
-        // Comportamientos para los botones de los joysticks (teclas)
-        joystick_left_button: joystick_left_button {
-            compatible = "zmk,behavior-key-press";
-            label = "JOYSTICK_LEFT_BUTTON";
-            #binding-cells = <1>;
-            bindings = <&kp Q>; // Tecla Q (joystick izquierdo)
-        };
-        joystick_right_button: joystick_right_button {
-            compatible = "zmk,behavior-key-press";
-            label = "JOYSTICK_RIGHT_BUTTON";
-            #binding-cells = <1>;
-            bindings = <&kp E>; // Tecla E (joystick derecho)
-        };
-    };
-
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        // Joystick izquierdo
-        sensor1: sensor_1 {
-            label = "JOYSTICK_LEFT_X";
-            io-channel = <&adc 0>; // Pin A0 (eje X)
-        };
-        sensor2: sensor_2 {
-            label = "JOYSTICK_LEFT_Y";
-            io-channel = <&adc 1>; // Pin A1 (eje Y)
-        };
-        // Joystick derecho
-        sensor3: sensor_3 {
-            label = "JOYSTICK_RIGHT_X";
-            io-channel = <&adc 2>; // Pin A2 (eje X)
-        };
-        sensor4: sensor_4 {
-            label = "JOYSTICK_RIGHT_Y";
-            io-channel = <&adc 3>; // Pin A3 (eje Y)
-        };
-        // Botones de los joysticks
-        sensor5: sensor_5 {
-            label = "JOYSTICK_LEFT_BUTTON";
-            io-channel = <&gpio0 2>; // Pin D2 (botón izquierdo)
-        };
-        sensor6: sensor_6 {
-            label = "JOYSTICK_RIGHT_BUTTON";
-            io-channel = <&gpio0 3>; // Pin D3 (botón derecho)
-        };
-    };
-};
-
-// Finaliza Joystiks
-
 
 
 / {
@@ -149,13 +61,6 @@
 &kp LSHFT   &kp Z  &kp X  &kp C              &kp V         &kp B        &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                           &kp LEFT_CONTROL   &kp SPACE     &mo 1        &kp ENTER  &kp SPACE  &mo 4
                 
-                // Joystick izquierdo (teclas)
-                    &joystick_left_left &joystick_left_right
-                    &joystick_left_up &joystick_left_down
-                // Joystick derecho (movimiento gradual del mouse)
-                    &joystick_right_gradual
-                // Botones de los joysticks (teclas)
-                    &joystick_left_button &joystick_right_button
             >;
 
             label = " QWERTY ";
