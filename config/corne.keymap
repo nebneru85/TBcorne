@@ -115,6 +115,7 @@
             io-channel = <&gpio0 3>; // Pin D3 (botón derecho)
         };
     };
+};
 
 // Finaliza Joystiks
 
@@ -149,13 +150,13 @@
 &kp LSHFT   &kp Z  &kp X  &kp C              &kp V         &kp B        &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                           &kp LEFT_CONTROL   &kp SPACE     &mo 1        &kp ENTER  &kp SPACE  &mo 4
                 
-        // Joystick izquierdo (teclas)
-                &joystick_left_left &joystick_left_right
-                &joystick_left_up &joystick_left_down
-        // Joystick derecho (movimiento gradual del mouse)
-                &joystick_right_gradual
-        // Botones de los joysticks (teclas)
-                &joystick_left_button &joystick_right_button
+                // Joystick izquierdo (teclas)
+                    &joystick_left_left &joystick_left_right
+                    &joystick_left_up &joystick_left_down
+                // Joystick derecho (movimiento gradual del mouse)
+                    &joystick_right_gradual
+                // Botones de los joysticks (teclas)
+                    &joystick_left_button &joystick_right_button
             >;
 
             label = " QWERTY ";
@@ -231,6 +232,25 @@
             >;
 
             label = "RGB-BLUET";
+        };
+    };
+
+
+// Función para mapear los valores del joystick a la velocidad del mouse con zona muerta
+    joystick_mouse_mapper: joystick_mouse_mapper {
+        compatible = "zmk,behavior-custom";
+        label = "JOYSTICK_MOUSE_MAPPER";
+        #binding-cells = <0>;
+        bindings = <&joystick_right_gradual>;
+        mapper {
+// Mapear valores del ADC (0-1023) a velocidad del mouse (-100 a 100)
+            input-min = <0>;
+            input-max = <1023>;
+            output-min = <-100>;
+            output-max = <100>;
+// Zona muerta (deadzone)
+            deadzone-min = <450>; // Límite inferior de la zona muerta
+            deadzone-max = <550>; // Límite superior de la zona muerta
         };
     };
 };
