@@ -28,6 +28,33 @@
 #define RGBBRD  &rgb_ug RGB_BRD
 #define RGBEFF  &rgb_ug RGB_EFF
 
+
+// Joysticks
+/ {
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensor1: sensor_1 {
+            label = "JOYSTICK_LEFT_X";
+            io-channel = <&adc 0>; // Pin A0
+        };
+        sensor2: sensor_2 {
+            label = "JOYSTICK_LEFT_Y";
+            io-channel = <&adc 1>; // Pin A1
+        };
+        sensor3: sensor_3 {
+            label = "JOYSTICK_RIGHT_X";
+            io-channel = <&adc 2>; // Pin A2
+        };
+        sensor4: sensor_4 {
+            label = "JOYSTICK_RIGHT_Y";
+            io-channel = <&adc 3>; // Pin A3
+        };
+    };
+};
+
+
+
+
 / {
     behaviors {
         hm: homerow_mods {
