@@ -235,6 +235,7 @@
         };
     };
 
+};
 
 // Función para mapear los valores del joystick a la velocidad del mouse con zona muerta
     joystick_mouse_mapper: joystick_mouse_mapper {
@@ -253,4 +254,3 @@
             deadzone-max = <550>; // Límite superior de la zona muerta
         };
     };
-};
