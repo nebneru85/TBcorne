@@ -4,6 +4,8 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#include <dt-bindings/zmk/mouse.h>
+
 #define Main    0
 #define Num     1
 #define Signos  2
@@ -48,6 +50,16 @@
         sensor4: sensor_4 {
             label = "JOYSTICK_RIGHT_Y";
             io-channel = <&adc 3>; // Pin A3
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+                &sensor1 &sensor2
+                &sensor3 &sensor4
+            >;
         };
     };
 };
