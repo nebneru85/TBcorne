@@ -246,8 +246,7 @@
 // Mapear valores del ADC (0-1023) a velocidad del mouse (-100 a 100)
             input-min = <0>;
             input-max = <1023>;
-
-            output-min = <-100>;
+            output-min = <0>;
             output-max = <100>;
 // Zona muerta (deadzone)
             deadzone-min = <450>; // Límite inferior de la zona muerta
