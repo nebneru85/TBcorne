@@ -60,14 +60,13 @@
             bindings = <&kp S>; // Tecla S (abajo)
         };
 
-        // Comportamientos para el joystick derecho (movimiento gradual del mouse)
+        // Comportamiento para el joystick derecho (movimiento gradual del mouse)
         joystick_right_gradual: joystick_right_gradual {
             compatible = "zmk,behavior-mouse-move";
             label = "JOYSTICK_RIGHT_GRADUAL";
             #binding-cells = <0>;
-            // Estos valores se actualizarán dinámicamente
-            move-x = < 0 >;
-            move-y = < 0 >;
+            move-x = <0>; // Se actualizará dinámicamente
+            move-y = <0>; // Se actualizará dinámicamente
         };
 
         // Comportamientos para los botones de los joysticks (teclas)
@@ -237,20 +236,4 @@
 
 };
 
-// Función para mapear los valores del joystick a la velocidad del mouse con zona muerta
-    joystick_mouse_mapper: joystick_mouse_mapper {
-        compatible = "zmk,behavior-custom";
-        label = "JOYSTICK_MOUSE_MAPPER";
-        #binding-cells = <0>;
-        bindings = <&joystick_right_gradual>;
-        mapper {
-// Mapear valores del ADC (0-1023) a velocidad del mouse (-100 a 100)
-            input-min = <0>;
-            input-max = <1023>;
-            output-min = <1>;
-            output-max = <100>;
-// Zona muerta (deadzone)
-            deadzone-min = <450>; // Límite inferior de la zona muerta
-            deadzone-max = <550>; // Límite superior de la zona muerta
-        };
-    };
+
