@@ -30,28 +30,6 @@
 #define RGBEFF  &rgb_ug RGB_EFF
 
 
-// Joysticks
-/ {
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensor1: sensor_1 {
-            label = "JOYSTICK_LEFT_X";
-            io-channel = <&adc 0>; // Pin A0
-        };
-        sensor2: sensor_2 {
-            label = "JOYSTICK_LEFT_Y";
-            io-channel = <&adc 1>; // Pin A1
-        };
-        sensor3: sensor_3 {
-            label = "JOYSTICK_RIGHT_X";
-            io-channel = <&adc 2>; // Pin A2
-        };
-        sensor4: sensor_4 {
-            label = "JOYSTICK_RIGHT_Y";
-            io-channel = <&adc 3>; // Pin A3
-        };
-    };
-};
 
 
 
@@ -85,8 +63,6 @@
 &kp LSHFT   &kp Z  &kp X  &kp C              &kp V         &kp B        &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
                           &kp LEFT_CONTROL   &kp SPACE     &mo 1        &kp ENTER  &kp SPACE  &mo 4
 
-                &sensor1 &sensor2
-                &sensor3 &sensor4
             >;
 
             label = " QWERTY ";
