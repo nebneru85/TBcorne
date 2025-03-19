@@ -3,6 +3,14 @@ if SHIELD_CORNE_LEFT
 config ZMK_KEYBOARD_NAME
     default "TBcorne"
 
+
+config USB_DEVICE_PRODUCT
+    default ZMK_KEYBOARD_NAME
+
+config BT_DEVICE_NAME
+    default ZMK_KEYBOARD_NAME
+
+
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
