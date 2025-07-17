@@ -15,7 +15,7 @@
     chain-length = <27>;
 };
 
-// Short versions 
+// Short versions.
 
 #define RGBON   &rgb_ug RGB_ON
 #define RGBOFF  &rgb_ug RGB_OFF
